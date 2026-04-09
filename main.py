@@ -1,7 +1,33 @@
 import json
 import os
+import msvcrt
 
 ARQUIVO_DADOS = "dados.json"
+
+
+def input_senha(mensagem="Senha: "):
+    print(mensagem, end="", flush=True)
+    senha = ""
+
+    while True:
+        tecla = msvcrt.getch()
+
+        if tecla in (b"\r", b"\n"):
+            print()
+            break
+        elif tecla == b"\x08":
+            if len(senha) > 0:
+                senha = senha[:-1]
+                print("\b \b", end="", flush=True)
+        else:
+            try:
+                char = tecla.decode("utf-8")
+                senha += char
+                print("*", end="", flush=True)
+            except:
+                pass
+
+    return senha.strip()
 
 
 def carregar_dados():
@@ -35,10 +61,16 @@ def criar_conta(usuarios):
         print("Esse usuário já existe.")
         return
 
-    senha = input("Digite uma senha: ").strip()
+    senha = input_senha("Digite uma senha: ")
 
     if not senha:
         print("A senha não pode ficar vazia.")
+        return
+
+    confirmar_senha = input_senha("Confirme a senha: ")
+
+    if senha != confirmar_senha:
+        print("As senhas não coincidem.")
         return
 
     usuarios[usuario] = {
@@ -53,7 +85,7 @@ def criar_conta(usuarios):
 def login(usuarios):
     print("\n=== LOGIN ===")
     usuario = input("Usuário: ").strip()
-    senha = input("Senha: ").strip()
+    senha = input_senha("Senha: ")
 
     if usuario in usuarios and usuarios[usuario]["senha"] == senha:
         print(f"Login realizado com sucesso. Bem-vindo, {usuario}!")
