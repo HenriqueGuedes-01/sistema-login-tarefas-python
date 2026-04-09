@@ -1,0 +1,35 @@
+{
+    "usuarios": [
+        {
+            "nome": "weuler",
+            "senha": "1234",
+            "tarefas": [
+                {
+                    "titulo": "tarefa 1",
+                    "concluida": true
+                }
+            ]
+        }
+    ],
+    "weuler": {
+        "senha": "1234",
+        "tarefas": [
+            {
+                "descricao": "lavar louça",
+                "concluida": true
+            },
+            {
+                "descricao": "passar pano na casa",
+                "concluida": true
+            },
+            {
+                "descricao": "levar o cachorro pra passear",
+                "concluida": true
+            }
+        ]
+    },
+    "weulerh": {
+        "senha": "1234",
+        "tarefas": []
+    }
+}
