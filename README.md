@@ -1,23 +1,29 @@
-# Sistema de Login e Gerenciamento de Tarefas (Python)
+# Sistema de Login e Gerenciamento de Tarefas em Python
 
-## 📌 Descrição
-Projeto desenvolvido em Python que permite criar usuários, realizar login e gerenciar tarefas pessoais diretamente pelo terminal.
+## Descrição
+Projeto desenvolvido em Python com sistema de autenticação de usuários e gerenciamento de tarefas diretamente pelo terminal.
 
-## ⚙️ Funcionalidades
-- Cadastro de usuário
-- Login com validação
-- Adição de tarefas
-- Listagem de tarefas
-- Conclusão de tarefas
-- Salvamento de dados em arquivo JSON
+O sistema permite criar contas, realizar login e gerenciar tarefas pessoais, com salvamento de dados em arquivo JSON.
 
-## 🚀 Tecnologias utilizadas
+## Funcionalidades
+- Criar conta
+- Login de usuário
+- Senha oculta com `*`
+- Adicionar tarefa
+- Listar tarefas
+- Concluir tarefa
+- Editar tarefa
+- Remover tarefa
+- Salvamento automático em JSON
+- Mensagem de parabéns ao concluir todas as tarefas
+
+## Tecnologias utilizadas
 - Python
 - JSON
 
-## ▶️ Como executar
-1. Clone o repositório
-2. Execute o arquivo main.py:
+## Como executar
+1. Abra o terminal na pasta do projeto
+2. Execute o comando:
 
 ```bash
-python main.py
+py main.py
